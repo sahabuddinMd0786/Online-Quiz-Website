@@ -7,14 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Online  Quiz Website</h1>
-        <div class="timer">Time Left: <span id="time">30</span>s</div>
+    <div class="auth-container">
+        <div class="toggle-forms">
+            <button id="showLogin" class="active">Login</button>
+            <button id="showSignup">Sign Up</button>
+        </div>
+        <div class="login-container" id="login-container">
+            <h1>Login to Quiz App</h1>
+            <form id="loginForm">
+                <select id="loginRole" required>
+                    <option value="" disabled selected>Select role</option>
+                    <option value="client">Client</option>
+                    <option value="user">User</option>
+                </select>
+                <input type="text" id="loginUsername" placeholder="Enter your username" required>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="error-message" id="login-error-message"></div>
+        </div>
+        <div class="signup-container" id="signup-container" style="display: none;">
+            <h1>Sign Up for Quiz App</h1>
+            <form id="signupForm">
+                <select id="signupRole" required>
+                    <option value="" disabled selected>Select role</option>
+                    <option value="client">Client</option>
+                    <option value="user">User</option>
+                </select>
+                <input type="text" id="signupUsername" placeholder="Choose a username" required>
+                <input type="password" id="signupPassword" placeholder="Choose a password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="error-message" id="signup-error-message"></div>
+        </div>
+    </div>
+    <div class="quiz-container" style="display: none;">
+        <h1>Online Quiz App</h1>
+        <!-- Timer can be implemented in JS if needed -->
+        <div class="timer" style="display:none;">Time Left: <span id="time">30</span>s</div>
         <div class="question">Question will appear here</div>
         <div class="options"></div>
-        <div class="result">Your score: <span id="score">0</span></div>
+        <div class="result" style="display:none;">Your score: <span id="score">0</span></div>
+        <div class="score-board">Score: <span id="score">0</span></div>
         <button class="restart-btn">Restart Quiz</button>
     </div>
+    <script src="apps.js"></script>
 </body>
-<script src="apps.js"></script> 
 </html>
